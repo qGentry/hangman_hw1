@@ -1,0 +1,2 @@
+# Editable install with no version control (games==1.1)
+-e /home/ffisin/PycharmProjects/hangman/main/src

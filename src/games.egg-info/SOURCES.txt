@@ -1,0 +1,11 @@
+README.md
+setup.py
+src/bin/__init__.py
+src/bin/run_hangman.py
+src/games/__init__.py
+src/games/hangman.py
+src/games.egg-info/PKG-INFO
+src/games.egg-info/SOURCES.txt
+src/games.egg-info/dependency_links.txt
+src/games.egg-info/entry_points.txt
+src/games.egg-info/top_level.txt
