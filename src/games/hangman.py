@@ -27,20 +27,11 @@ class Hangman:
                 print("You won!")
                 return False
             return True
-        else:
-            cur_word_state, _ = self.make_current_output()
-            self.cur_lives -= 1
-            print(f"Missed, mistake {self.max_lives - self.cur_lives} out "
-                  f"of {self.max_lives}.\n\nThe word: {cur_word_state}\n")
-            if self.cur_lives <= 0:
-                print("You lost")
-                return False
-
-            return True
-
-    def game_state(self):
-        if self.cur_lives < 0:
+        cur_word_state, _ = self.make_current_output()
+        self.cur_lives -= 1
+        print(f"Missed, mistake {self.max_lives - self.cur_lives} out "
+              f"of {self.max_lives}.\n\nThe word: {cur_word_state}\n")
+        if self.cur_lives <= 0:
             print("You lost")
-        else:
-            pass
-
+            return False
+        return True

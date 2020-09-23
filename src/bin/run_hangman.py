@@ -1,12 +1,13 @@
-from games import Hangman
 import random
 import argparse
+
+from games import Hangman
 
 
 def choose_random_word(source) -> str:
     words = []
-    with open(source, 'r') as f:
-        for line in f:
+    with open(source, 'r') as file:
+        for line in file:
             words.append(line.strip('\n'))
     random_word_index = random.randint(0, len(words))
     return words[random_word_index]
@@ -15,7 +16,7 @@ def choose_random_word(source) -> str:
 def main():
     parser = argparse.ArgumentParser(description='This is hangman game')
     parser.add_argument('--vocab-path', type=str, default='configs/hangman_vocab.txt',
-                        help='You can specify your own vocab by passing path to it in this argument')
+                        help='You can specify your own vocab by passing it path in this argument')
     args = parser.parse_args()
     hangman = Hangman(secret_word=choose_random_word(args.vocab_path))
     while True:
