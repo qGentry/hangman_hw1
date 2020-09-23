@@ -4,6 +4,6 @@ python:
 install:
   - pip install -e .
 script:
-  - pytest
+  - py.test --cov-report=xml --cov=src
 after_success:
   - bash <(curl -s https://codecov.io/bash)
