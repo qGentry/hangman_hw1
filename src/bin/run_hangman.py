@@ -9,7 +9,7 @@ def choose_random_word(source) -> str:
     with open(source, 'r') as file:
         for line in file:
             words.append(line.strip('\n'))
-    random_word_index = random.randint(0, len(words))
+    random_word_index = random.randint(0, len(words) - 1)
     return words[random_word_index]
 
 
