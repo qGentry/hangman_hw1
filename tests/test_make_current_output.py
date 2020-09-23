@@ -1,5 +1,5 @@
 import unittest
-from utils.make_hangman_state import make_hangman_state
+from games.utils.make_hangman_state import make_hangman_state
 
 TEST_CASES = [
     {
