@@ -22,7 +22,8 @@ def main():
     while True:
         print("Guess a letter:")
         cur_char = input()
-        keep_playing = hangman.try_guess(cur_char)
+        keep_playing, output = hangman.try_guess(cur_char)
+        print(output)
         if not keep_playing:
             break
 

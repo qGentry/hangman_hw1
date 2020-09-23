@@ -5,42 +5,42 @@ TEST_CASES = [
     {
         "hangman_state": make_hangman_state("mama", 5, 5, {"m"}),
         "input": "a",
-        "output": False,
+        "output": (False, 'Hit!\n\nThe word: mama\n\nYou won!'),
     },
     {
         "hangman_state": make_hangman_state("mama", 5, 5, {"a"}),
         "input": "m",
-        "output": False,
+        "output": (False, 'Hit!\n\nThe word: mama\n\nYou won!'),
     },
     {
         "hangman_state": make_hangman_state("mama", 5, 5, set()),
         "input": "m",
-        "output": True,
+        "output": (True, 'Hit!\n\nThe word: m*m*\n'),
     },
     {
         "hangman_state": make_hangman_state("mama", 5, 5, {"m"}),
         "input": "k",
-        "output": True,
+        "output": (True, 'Missed, mistake 1 out of 5.\n\nThe word: m*m*\n'),
     },
     {
         "hangman_state": make_hangman_state("yeild", 5, 5, {"d"}),
         "input": "y",
-        "output": True,
+        "output": (True, 'Hit!\n\nThe word: y***d\n'),
     },
     {
         "hangman_state": make_hangman_state("yeild", 1, 5, {"d"}),
         "input": "u",
-        "output": False,
+        "output": (False, 'Missed, mistake 5 out of 5.\n\nThe word: ****d\n\nYou lost'),
     },
     {
         "hangman_state": make_hangman_state("yeild", 1, 5, {"y", "d"}),
         "input": "i",
-        "output": True,
+        "output": (True, 'Hit!\n\nThe word: y*i*d\n'),
     },
     {
         "hangman_state": make_hangman_state("mama", 1, 5, {"m"}),
         "input": "u",
-        "output": False,
+        "output": (False, 'Missed, mistake 5 out of 5.\n\nThe word: m*m*\n\nYou lost'),
     },
 ]
 

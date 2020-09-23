@@ -18,20 +18,17 @@ class Hangman:
                 result.append('*')
         return ''.join(result), guessed
 
-    def try_guess(self, char: str) -> bool:
+    def try_guess(self, char: str) -> (bool, str):
         if char in self.chars:
             self.guessed_chars.add(char)
             cur_word_state, guessed = self.make_current_output()
-            print(f"Hit!\n\nThe word: {cur_word_state}\n")
             if guessed:
-                print("You won!")
-                return False
-            return True
+                return False, f"Hit!\n\nThe word: {cur_word_state}\n\nYou won!"
+            return True, f"Hit!\n\nThe word: {cur_word_state}\n"
         cur_word_state, _ = self.make_current_output()
         self.cur_lives -= 1
-        print(f"Missed, mistake {self.max_lives - self.cur_lives} out "
-              f"of {self.max_lives}.\n\nThe word: {cur_word_state}\n")
         if self.cur_lives <= 0:
-            print("You lost")
-            return False
-        return True
+            return (False, f"Missed, mistake {self.max_lives - self.cur_lives} out "
+                           f"of {self.max_lives}.\n\nThe word: {cur_word_state}\n\nYou lost")
+        return (True, f"Missed, mistake {self.max_lives - self.cur_lives} out "
+                      f"of {self.max_lives}.\n\nThe word: {cur_word_state}\n")
