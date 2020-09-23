@@ -7,7 +7,7 @@ Hangman is simple child game that was made for testing CI systems.
 
 ## Copyright
 
-Copyright © 2017 Philipp Fisin. See [license] for details.1.svg?branch=master
+Copyright © 2017 Philipp Fisin. See [license] for details.
 
 [license]: LICENSE.txt
 
